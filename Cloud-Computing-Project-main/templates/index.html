@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cloud Computing - Program Installer</title>
+    <meta name="author" content="name" />
+    <meta name="description" content="description here" />
+    <meta name="keywords" content="keywords,here" />
+    <link
+      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!--Replace with your tailwind.css once created-->
+  </head>
+
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav id="header" class="fixed w-full z-10 top-0 bg-white shadow">
+      <div
+        id="progress"
+        class="h-1 z-20 top-0"
+        style="
+          background: linear-gradient(
+            to right,
+            #4dc0b5 var(--scroll),
+            transparent 0
+          );
+        "
+      ></div>
+
+      <div
+        class="
+          w-full
+          md:max-w-4xl
+          mx-auto
+          flex flex-wrap
+          items-center
+          justify-between
+          mt-0
+          py-3
+        "
+      >
+        <div class="pl-4">
+          <a
+            class="
+              text-gray-900 text-base
+              no-underline
+              hover:no-underline
+              font-extrabold
+              text-xl
+            "
+            href="#"
+          >
+            Cloud Computing Project (2021)
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!--Container-->
+    <div class="container w-full md:max-w-3xl mx-auto pt-20">
+      <div
+        class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal"
+        style="font-family: Georgia, serif"
+      >
+        <!--Title-->
+        <div class="font-sans">
+          <h1
+            class="
+              font-bold font-sans
+              break-normal
+              text-gray-900
+              pt-6
+              pb-2
+              text-3xl
+              md:text-4xl
+            "
+          >
+            Program Installer for starter programmer
+          </h1>
+          <!-- <p class="text-sm md:text-base font-normal text-gray-600">Published 19 February 2019</p> -->
+        </div>
+
+        <!--Post Content-->
+
+        <!--Lead Para-->
+        <p class="py-6">
+          This website provides a service for starter developers to create
+          program installers in ".exe" format.
+        </p>
+        <blockquote
+          class="border-l-4 border-green-500 italic my-8 pl-8 md:pl-12"
+        >
+          The program must be built and zipped.
+        </blockquote>
+
+        <h4 class="py-4 font-sans"><b>Upload your program (*.zip) </b></h4>
+        <!-- <input type="file" id="program_file" name="program_file"> -->
+        <form method="post" , action="#" id="form" onsubmit="return false">
+          <div
+            class="
+              relative
+              h-40
+              rounded-lg
+              border-dashed border-2 border-gray-200
+              bg-white
+              flex
+              justify-center
+              items-center
+              hover:cursor-pointer
+            "
+            id="upload-box"
+          >
+            <div class="absolute">
+              <span id="no-file">
+				<div id="non-hover-text" class="flex flex-col items-center">
+					<i class="fa fa-cloud-upload fa-3x text-gray-200"></i>
+					<span class="block text-gray-400 font-normal"
+					  >Attach you files here</span
+					>
+					<span class="block text-gray-400 font-normal">or</span>
+					<span class="block text-blue-400 font-normal"
+					  >Browse files</span
+					>
+				  </div>
+				  <div id="hover-text" class="flex flex-col items-center hidden">
+						<span class="block text-gray-400 font-normal"
+						>Please drop the file here</span
+						>
+					</div>
+				</span>
+				<span id="select-file" class='hidden'>
+					<div class="flex flex-col items-center">
+					  <span class="block text-gray-600 font-nomal" id="file-info"></span>
+					</div>
+				</span>	 
+            	</div>
+			
+            <input
+              type="file"
+              class="h-full w-full opacity-0"
+              name="program_file"
+              id="program-file"
+			  accept=".zip"
+              onchange="loadFile(this.files)"
+            />
+          </div>
+          <h4 class="py-4 font-sans"><b>Version</b></h4>
+          <input type="text" id="version" />
+
+          <h4 class="py-4 font-sans"><b>Author</b></h4>
+          <input type="text" id="author" />
+
+          <h4 class="py-4 font-sans"><b>Execution file path(.exe)</b></h4>
+          <input type="text" id="file-path"/>
+
+          <h4 class="py-4 font-sans"><b>Display name</b></h4>
+          <input type="text" id="display-name" />
+          
+          <h4 class="py-4 font-sans"><b><p></p></b></h4>
+
+          <div class="flex flex-col items-end">
+            <input
+              type="submit"
+              value="start"
+              class="
+                bg-white
+                border-2
+                font-semibold
+                rounded-lg
+                p-2
+                shadow-md
+                hover:bg-blue-200
+              "
+              id="submit"
+            />
+          </div>
+        </form>
+
+        <p class="py-6">확인 사항:</p>
+			<pre class="bg-gray-900 rounded text-white font-mono text-base p-2 md:p-4">
+				<code class="break-words whitespace-pre-wrap">
+          - 빌드 완료된 파일을 압축파일(*.zip) 으로 보내주세요!
+          - 압축파일 루트경로에 icon.icon 이 있어야 합니다!
+				</code>
+			</pre>
+
+        <!--/ Post Content-->
+      </div>
+
+      <!--Tags -->
+      <div class="text-base md:text-sm text-gray-500 px-4 py-6"></div>
+
+      <!--Divider-->
+      <hr class="border-b-2 border-gray-400 mb-8 mx-4" />
+    </div>
+    <!--/container-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='main.js')}}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='connect.js')}}"
+    ></script>
+  </body>
+</html>

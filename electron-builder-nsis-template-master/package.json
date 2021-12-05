@@ -1,0 +1,39 @@
+{
+    "name": "electron-quick-start",
+    "version": "1.0.0",
+    "description": "A minimal Electron application",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron .",
+      "deploy": "electron-builder --windows nsis:x64 --publish never"
+    },
+    "author": "AUTHOR_NAME",
+    "license": "MIT",
+    "devDependencies": {
+      "electron": "^16.0.4",
+      "electron-builder": "^22.10.5"
+    },
+    "build": {
+      "productName": "display name",
+      "asar": false,
+      "extraFiles": [
+        "main"
+      ],
+      "win": {
+        "target": [
+          "nsis"
+        ],
+        "icon": "./main/icon.ico"
+      },
+       "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "artifactName" : "Builded_Setup.exe"
+      },
+      "directories": {
+        "buildResources": "./resources/installer/",
+        "output": "./dist/",
+        "app": "."
+      }
+    }
+  }
